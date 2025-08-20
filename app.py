@@ -77,6 +77,10 @@ def send_verification_email(email, code):
     except ApiException:
         return False
 
+@app.route("/", methods=["GET"])
+def home():
+    return jsonify({"message": "API is running 🚀"}), 200
+
 @app.route("/send-code", methods=["POST"])
 def send_code():
     data = request.get_json() or {}
@@ -143,4 +147,5 @@ if __name__ == "__main__":
     init_db()
     port = int(os.environ.get("PORT", 8080))
     app.run(host="0.0.0.0", port=port)
+
 
