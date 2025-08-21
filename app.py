@@ -67,7 +67,7 @@ def send_verification_email(email, code):
     api_instance = sib_api_v3_sdk.TransactionalEmailsApi(sib_api_v3_sdk.ApiClient(configuration))
     send_smtp_email = sib_api_v3_sdk.SendSmtpEmail(
         to=[{"email": email}],
-        sender={"email": "sezaroo2004@hotmail.com", "name": "AUJI"},
+        sender={"email": "auji2025@outlook.com", "name": "AUJI"},
         subject="كود التفعيل الخاص بك",
         html_content=f"<p>كود التفعيل هو: <b>{code}</b></p>"
     )
@@ -147,5 +147,6 @@ if __name__ == "__main__":
     init_db()
     port = int(os.environ.get("PORT", 8080))
     app.run(host="0.0.0.0", port=port)
+
 
 
